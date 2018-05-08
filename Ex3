@@ -1,0 +1,30 @@
+package lista14java;
+import java.util.Scanner;
+public class ex3 {
+
+	public static void main(String[] args) {
+		int litros, desconto;
+		char tipo;
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Qual o tipo de combustivel deseja comprar?(A:Álcool e G:Gasolina)");
+		tipo = entrada.next().charAt(0);
+		System.out.println("Quantos litros do combustivel deseja comprar?");
+		litros = entrada.nextInt();
+		switch (tipo){
+		case 'G': if(litros>20){
+			desconto = 4;
+		}else if(litros<=20){
+			desconto = 6;
+		}
+		break;
+		case 'A': if(litros>20){
+			desconto = 3;
+		}else if(litros<=20){
+			desconto = 5;
+		}
+		break;
+		}
+		desconto *=  litros;
+		
+	}
+}
