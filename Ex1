@@ -1,0 +1,47 @@
+package lista14java;
+import java.util.Scanner;
+public class ex1 {
+
+	public static void main(String[] args) {
+		int[] idades = new int[15];
+		int[] faixas = new int[5];
+		float[] porcentagem = new float[5];
+		int cont;
+		Scanner entrada = new Scanner(System.in);
+		for(cont=0; cont<=14; cont++){
+			System.out.println("Insira a idade da pessoa "+(cont+1));
+			idades[cont] = entrada.nextInt();
+			if((idades[cont]<=1)&&(idades[cont])<=15){
+				faixas[0] = faixas[0]+1;
+			}else if((idades[cont]<=16)&&(idades[cont])<=30){
+				faixas[1] = faixas[1]+1;
+			}else if((idades[cont]<=31)&&(idades[cont])<=45){
+				faixas[2] = faixas[2]+1;
+			}else if((idades[cont]<=46)&&(idades[cont])<=60){
+				faixas[3] = faixas[3]+1;
+			}else if(idades[cont]>60){
+				faixas[4] = faixas[4]+1;
+			}else if(idades[cont]<0){
+				System.out.println("Idade Invalida");
+				break;
+			}
+		}
+		System.out.println("a quantidade de pessoas entre 1 e 15 anos é "+faixas[0]);
+		System.out.println("a quantidade de pessoas entre 16 e 30 anos é "+faixas[1]);
+		System.out.println("a quantidade de pessoas entre 31 e 45 anos é "+faixas[2]);
+		System.out.println("a quantidade de pessoas entre 46 e 60 anos é "+faixas[3]);
+		System.out.println("a quantidade de pessoas com mais de 60 anos é "+faixas[4]);
+		System.out.println(" ");
+		System.out.println(" ");
+		for(cont=0; cont<=4; cont++){
+			porcentagem[cont] = (faixas[cont]*100)/15;
+		}
+		System.out.println("a porcentagem de pessoas entre 1 e 15 anos é "+porcentagem[0]+"%");
+		System.out.println("a porcentagem de pessoas entre 16 e 30 anos é "+porcentagem[1]+"%");
+		System.out.println("a porcentagem de pessoas entre 31 e 45 anos é "+porcentagem[2]+"%");
+		System.out.println("a porcentagem de pessoas entre 46 e 60 anos é "+porcentagem[3]+"%");
+		System.out.println("a porcentagem de pessoas com mais de 60 anos é "+porcentagem[4]+"%"); 
+		
+	}
+
+}
